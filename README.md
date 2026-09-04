@@ -1,26 +1,47 @@
-# B.Tech Career Path Finder
+live url: https://b-tech-career-path-finder.onrender.com 
 
-A professional multi-page career discovery website for B.Tech graduates, built with Python and Flask.
+B.Tech Career Path Finder
 
-## Features
+A professional Flask-based web application that helps B.Tech students explore career options based on their engineering branch. The application provides a simple step-by-step interface to select a branch, explore suitable career paths, and view career details.
 
-- Department selection for ECE, CSE, EEE and Mechanical Engineering
-- Separate fresh page for every stage
-- Career cards with objective, skills, tools and roadmap
-- Browser Back button support
-- On-page Back navigation
-- Responsive layout
-- Hover effects and page entrance transitions
-- Light, modern visual design
-- No database required for the first version
-
-## Project structure
-
-```text
+✨ Features
+Branch-based career exploration
+Supports ECE, CSE, EEE and MECH
+Separate page/interface for every step
+Career cards with detailed information
+Browser Back button support
+Built-in Back navigation buttons
+Responsive and professional UI
+Hover effects and smooth transitions
+Breadcrumb navigation
+404 error page
+Flask-based routing
+Deployed as a live web application
+🛠️ Technologies Used
+Frontend
+HTML5
+CSS3
+JavaScript
+Backend
+Python
+Flask
+Jinja2 Templates
+Deployment
+Git
+GitHub
+Render
+Gunicorn
+Development Tools
+Visual Studio Code
+Command Prompt / PowerShell
+Web Browser
+📁 Project Structure
 BTech-Career-Path-Finder/
+│
 ├── app.py
 ├── requirements.txt
 ├── README.md
+│
 ├── templates/
 │   ├── base.html
 │   ├── index.html
@@ -28,26 +49,85 @@ BTech-Career-Path-Finder/
 │   ├── careers.html
 │   ├── career.html
 │   └── 404.html
+│
 └── static/
     ├── style.css
     └── script.js
-```
+⚙️ How It Works
+Home Page
+    ↓
+Select Engineering Branch
+    ↓
+View Career Options
+    ↓
+Select Career
+    ↓
+View Career Details
 
-## Run
+The application uses Flask routes to dynamically display branch and career information while Jinja2 is used for rendering HTML templates.
 
-```bash
+💻 Run Locally
+1. Clone the repository
+git clone https://github.com/yourusername/BTech-Career-Path-Finder.git
+cd BTech-Career-Path-Finder
+2. Install dependencies
 py -m pip install -r requirements.txt
+3. Run the Flask application
 py app.py
-```
 
 Open:
 
-```text
 http://127.0.0.1:5000
-```
+📦 Requirements
+Flask>=3.0,<4.0
+gunicorn
+🌐 Deployment
 
-## Navigation flow
+This project was deployed using Render Web Service.
 
-Home → Department → Career Paths → Career Details
+Deployment configuration
 
-Each stage is a real Flask route, so the previous page disappears and the browser Back button works normally.
+Build Command
+
+pip install -r requirements.txt
+
+Start Command
+
+gunicorn app:app
+
+The project was first pushed to GitHub and then connected to Render for deployment.
+
+🔄 Deployment Workflow
+Develop in VS Code
+       ↓
+Test Flask App Locally
+       ↓
+Push Project to GitHub
+       ↓
+Connect GitHub Repository to Render
+       ↓
+Render Installs Dependencies
+       ↓
+Gunicorn Starts Flask App
+       ↓
+Live Website
+🎯 Purpose
+
+The project is designed to help B.Tech students quickly understand career opportunities available after graduation and explore possible career paths according to their engineering specialization.
+
+🔮 Future Improvements
+Add more engineering branches
+Add more career roles
+Search and filter functionality
+Career skill requirements
+Salary and job-market information
+Personalized career recommendations
+Database integration
+User login and saved career paths
+👨‍💻 Author
+
+Mohammad Azmath Ali
+
+⭐ Project Highlights
+
+Python + Flask | HTML | CSS | JavaScript | Jinja2 | Git | GitHub | Gunicorn | Render | Responsive UI | Multi-page Navigation | Live Deployment
