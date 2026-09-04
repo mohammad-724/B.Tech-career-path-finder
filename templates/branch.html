@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ branch.name }} | CareerPath
+{% endblock %}
+
+{% block content %}
+
+<div class="breadcrumb reveal">
+
+    <a href="{{ url_for('home') }}">
+        Departments
+    </a>
+
+    <span>›</span>
+
+    <span>
+        {{ branch.short }}
+    </span>
+
+</div>
+
+
+<section class="branch-hero reveal">
+
+    <div class="branch-symbol">
+        {{ branch.icon }}
+    </div>
+
+    <div>
+
+        <p class="label">
+            STEP 02 · DEPARTMENT
+        </p>
+
+        <h1>
+            {{ branch.name }}
+        </h1>
+
+        <p>
+            {{ branch.description }}
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="next-panel reveal delay-1">
+
+    <div>
+
+        <span class="next-number">
+            02
+        </span>
+
+        <div>
+
+            <p class="label">
+                NEXT STEP
+            </p>
+
+            <h2>
+                Explore your career options
+            </h2>
+
+            <p>
+                {{ branch.careers|length }}
+                carefully selected career paths are available
+                for this department.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <a
+        class="primary-button"
+        href="{{ url_for('careers_page', branch_code=branch.short) }}"
+    >
+
+        View Career Paths
+
+        <span>
+            →
+        </span>
+
+    </a>
+
+</section>
+
+
+<section class="career-preview reveal delay-2">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="label">
+                CAREER AREAS
+            </p>
+
+            <h2>
+                What can you become?
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="mini-career-grid">
+
+        {% for career in branch.careers %}
+
+        <div class="mini-card">
+
+            <span>
+                {{ "%02d"|format(loop.index) }}
+            </span>
+
+            <h3>
+                {{ career.title }}
+            </h3>
+
+            <p>
+                {{ career.tag }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<a
+    class="back-button reveal delay-2"
+    href="{{ url_for('home') }}"
+>
+    ← Back to Departments
+</a>
+
+{% endblock %}

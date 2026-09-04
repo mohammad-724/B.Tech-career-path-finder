@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+Page Not Found | CareerPath
+{% endblock %}
+
+{% block content %}
+
+<section class="error-page reveal">
+
+    <span class="error-code">
+        404
+    </span>
+
+    <h1>
+        That page doesn't exist.
+    </h1>
+
+    <p>
+        The career path or department you requested
+        could not be found.
+    </p>
+
+    <a
+        class="primary-button"
+        href="{{ url_for('home') }}"
+    >
+
+        Return Home
+
+        <span>
+            →
+        </span>
+
+    </a>
+
+</section>
+
+{% endblock %}

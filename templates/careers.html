@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}
+Career Options · {{ branch.short }} | CareerPath
+{% endblock %}
+
+{% block content %}
+
+<div class="breadcrumb reveal">
+
+    <a href="{{ url_for('home') }}">
+        Departments
+    </a>
+
+    <span>›</span>
+
+    <a href="{{ url_for('branch_page', branch_code=branch.short) }}">
+        {{ branch.short }}
+    </a>
+
+    <span>›</span>
+
+    <span>
+        Career paths
+    </span>
+
+</div>
+
+
+<section class="list-header reveal">
+
+    <div>
+
+        <p class="label">
+            STEP 03 · CAREER PATHS
+        </p>
+
+        <h1>
+            Choose a career direction.
+        </h1>
+
+        <p>
+            Pick a role to see its objective, required skills,
+            tools and learning roadmap.
+        </p>
+
+    </div>
+
+
+    <div class="result-pill">
+
+        <strong>
+            {{ branch.careers|length }}
+        </strong>
+
+        <span>
+            career options
+        </span>
+
+    </div>
+
+</section>
+
+
+<div class="career-list reveal delay-1">
+
+    {% for career in branch.careers %}
+
+    <a
+        class="career-row"
+        href="{{ url_for(
+            'career_page',
+            branch_code=branch.short,
+            career_slug=career.slug
+        ) }}"
+    >
+
+        <span class="row-number">
+            {{ "%02d"|format(loop.index) }}
+        </span>
+
+
+        <div class="career-main">
+
+            <span class="tag">
+                {{ career.tag }}
+            </span>
+
+            <h2>
+                {{ career.title }}
+            </h2>
+
+            <p>
+                {{ career.objective }}
+            </p>
+
+        </div>
+
+
+        <span class="row-arrow">
+            ↗
+        </span>
+
+    </a>
+
+    {% endfor %}
+
+</div>
+
+
+<a
+    class="back-button reveal delay-2"
+    href="{{ url_for('branch_page', branch_code=branch.short) }}"
+>
+    ← Back to {{ branch.short }}
+</a>
+
+{% endblock %}

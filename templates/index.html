@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% block title %}
+Choose Your Department | CareerPath
+{% endblock %}
+
+{% block content %}
+
+<section class="hero reveal">
+
+    <div class="eyebrow">
+
+        <span class="status-dot"></span>
+
+        Career discovery for B.Tech graduates
+
+    </div>
+
+    <h1>
+        Find the career path
+        <br>
+        <span>that fits your degree.</span>
+    </h1>
+
+    <p class="hero-text">
+
+        Select your engineering department and explore real-world
+        career roles, essential skills, tools and a practical
+        learning roadmap.
+
+    </p>
+
+</section>
+
+
+<section class="selection-section reveal delay-1">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="label">
+                STEP 01
+            </p>
+
+            <h2>
+                Choose your department
+            </h2>
+
+        </div>
+
+        <span class="step-count">
+            1 / 3
+        </span>
+
+    </div>
+
+
+    <div class="branch-grid">
+
+        {% for code, branch in branches.items() %}
+
+        <a
+            class="branch-card"
+            href="{{ url_for('branch_page', branch_code=code) }}"
+        >
+
+            <div class="card-top">
+
+                <span class="branch-icon">
+                    {{ branch.icon }}
+                </span>
+
+                <span class="arrow">
+                    ↗
+                </span>
+
+            </div>
+
+
+            <div class="branch-code">
+                {{ branch.short }}
+            </div>
+
+
+            <h3>
+                {{ branch.name }}
+            </h3>
+
+
+            <p>
+                {{ branch.description }}
+            </p>
+
+
+            <div class="card-link">
+
+                Explore department
+
+                <span>
+                    →
+                </span>
+
+            </div>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<section class="info-strip reveal delay-2">
+
+    <div>
+
+        <span class="mini-icon">
+            01
+        </span>
+
+        <strong>
+            Explore
+        </strong>
+
+        <small>
+            See suitable career domains
+        </small>
+
+    </div>
+
+
+    <div>
+
+        <span class="mini-icon">
+            02
+        </span>
+
+        <strong>
+            Compare
+        </strong>
+
+        <small>
+            Understand skills and tools
+        </small>
+
+    </div>
+
+
+    <div>
+
+        <span class="mini-icon">
+            03
+        </span>
+
+        <strong>
+            Prepare
+        </strong>
+
+        <small>
+            Follow a learning roadmap
+        </small>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ career.title }} | CareerPath
+{% endblock %}
+
+{% block content %}
+
+<div class="breadcrumb reveal">
+
+    <a href="{{ url_for('home') }}">
+        Departments
+    </a>
+
+    <span>›</span>
+
+    <a href="{{ url_for('branch_page', branch_code=branch.short) }}">
+        {{ branch.short }}
+    </a>
+
+    <span>›</span>
+
+    <a href="{{ url_for('careers_page', branch_code=branch.short) }}">
+        Careers
+    </a>
+
+    <span>›</span>
+
+    <span>
+        {{ career.title }}
+    </span>
+
+</div>
+
+
+<section class="career-detail-hero reveal">
+
+    <div>
+
+        <p class="label">
+            CAREER PROFILE
+        </p>
+
+        <h1>
+            {{ career.title }}
+        </h1>
+
+        <p>
+            {{ career.objective }}
+        </p>
+
+    </div>
+
+
+    <div class="career-badge">
+
+        <span>
+            {{ branch.short }}
+        </span>
+
+        <small>
+            {{ career.level }}
+        </small>
+
+    </div>
+
+</section>
+
+
+<section class="detail-grid reveal delay-1">
+
+    <article class="detail-card large">
+
+        <div class="card-heading">
+
+            <span class="heading-icon">
+                ◆
+            </span>
+
+            <div>
+
+                <p class="label">
+                    01
+                </p>
+
+                <h2>
+                    Core Skills
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="chip-list">
+
+            {% for skill in career.skills %}
+
+            <span>
+                {{ skill }}
+            </span>
+
+            {% endfor %}
+
+        </div>
+
+    </article>
+
+
+    <article class="detail-card">
+
+        <div class="card-heading">
+
+            <span class="heading-icon">
+                ◇
+            </span>
+
+            <div>
+
+                <p class="label">
+                    02
+                </p>
+
+                <h2>
+                    Tools
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="chip-list soft">
+
+            {% for tool in career.tools %}
+
+            <span>
+                {{ tool }}
+            </span>
+
+            {% endfor %}
+
+        </div>
+
+    </article>
+
+</section>
+
+
+<section class="roadmap-card reveal delay-2">
+
+    <div class="roadmap-title">
+
+        <p class="label">
+            03 · LEARNING ROADMAP
+        </p>
+
+        <h2>
+            A practical route from graduate to job-ready.
+        </h2>
+
+    </div>
+
+
+    <div class="roadmap">
+
+        {% for step in career.roadmap %}
+
+        <div class="roadmap-step">
+
+            <span>
+                {{ loop.index }}
+            </span>
+
+            <p>
+                {{ step }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<div class="detail-actions reveal delay-2">
+
+    <a
+        class="back-button"
+        href="{{ url_for(
+            'careers_page',
+            branch_code=branch.short
+        ) }}"
+    >
+        ← All Career Paths
+    </a>
+
+
+    <a
+        class="primary-button"
+        href="{{ url_for('home') }}"
+    >
+
+        Start Again
+
+        <span>
+            ↗
+        </span>
+
+    </a>
+
+</div>
+
+{% endblock %}
