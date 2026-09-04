@@ -1,5 +1,7 @@
 live url: https://b-tech-career-path-finder.onrender.com 
 
+github deploy link:  https://mohammad-724.github.io/B.Tech-career-path-finder/
+
 B.Tech Career Path Finder
 
 A professional Flask-based web application that helps B.Tech students explore career options based on their engineering branch. The application provides a simple step-by-step interface to select a branch, explore suitable career paths, and view career details.
